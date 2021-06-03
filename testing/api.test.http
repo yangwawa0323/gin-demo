@@ -29,6 +29,23 @@ Authorization: Basic {{user}}:{{password}}
   "author": "yangwawa0323"
 }
 
+### @name badEmailFormat
+POST http://localhost:8080/videos
+Content-Type: application/json
+Authorization: Basic {{user}}:{{password}}
+
+{
+  "title": "The title",
+  "description": "The description 1",
+  "url": "http://localhost:8000/videos/1",
+  "author": {
+    "first_name" : "yang",
+    "last_name" : "ken",
+    "age": 46,
+    "email": "163.com"
+  }
+}
+
 ### @name titleIsTooLong
 POST http://localhost:8080/videos
 Content-Type: application/json
@@ -38,7 +55,12 @@ Authorization: Basic {{user}}:{{password}}
   "title": "The loooooong title 1",
   "description": "The description 1",
   "url": "http://localhost:8000/videos/1",
-  "author": "yangwawa0323"
+  "author": {
+    "first_name" : "yang",
+    "last_name" : "ken",
+    "age": 46,
+    "email": "163.com"
+  }
 }
 
 ### @name saveVideo
@@ -50,7 +72,12 @@ Authorization: Basic {{user}}:{{password}}
   "title": "Title 1",
   "description": "The description 1",
   "url": "http://localhost:8000/videos/1",
-  "author": "yangwawa"
+  "author": {
+    "first_name" : "yang",
+    "last_name" : "ken",
+    "age": 46,
+    "email": "yangwawa0323@163.com"
+  }
 }
 
 
@@ -60,7 +87,13 @@ Content-Type: application/json
 Authorization: Basic {{user}}:{{password}}
 
 {
-  "title": "The title 2",
+  "title": "The title",
   "description": "The description 2",
-  "url": "http://localhost:8000/videos/2"
+  "url": "http://localhost:8000/videos/2",
+  "author": {
+    "first_name" : "yang",
+    "last_name" : "ken",
+    "age": 46,
+    "email": "12238747@qq.com"
+  }
 }
