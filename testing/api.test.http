@@ -1,0 +1,24 @@
+### @name getAllVideos
+GET http://localhost:8080/videos
+Content-Type: application/json
+
+### @name saveVideo
+POST http://localhost:8080/videos
+Content-Type: application/json
+
+{
+  "title": "The title 1",
+  "description": "The description 1",
+  "url": "http://localhost:8000/videos/1"
+}
+
+
+### @name saveVideoAgain
+POST http://localhost:8080/videos
+Content-Type: application/json
+
+{
+  "title": "The title 2",
+  "description": "The description 2",
+  "url": "http://localhost:8000/videos/2"
+}
