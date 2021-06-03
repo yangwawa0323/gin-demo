@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/yangwawa0323/gin-demo/controller"
+	"github.com/yangwawa0323/gin-demo/middlewares"
 	"github.com/yangwawa0323/gin-demo/service"
 )
 
@@ -12,7 +13,12 @@ var (
 )
 
 func main() {
-	server := gin.Default()
+
+	/**
+	* Same as gin.Default()
+	 */
+	server := gin.New()
+	server.Use(gin.Recovery(), middlewares.Logger())
 
 	server.GET("/test", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{
