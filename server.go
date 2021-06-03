@@ -35,7 +35,9 @@ func main() {
 	* Same as gin.Default()
 	 */
 	server := gin.New()
-	server.Use(gin.Recovery(), middlewares.Logger())
+
+	// add BasicAuth middleware
+	server.Use(gin.Recovery(), middlewares.Logger(), middlewares.BasicAuth())
 
 	server.GET("/test", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{

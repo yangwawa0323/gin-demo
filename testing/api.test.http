@@ -1,10 +1,15 @@
+@user=yangwawa0323
+@password=redhat
+
 ### @name getAllVideos
 GET http://localhost:8080/videos
 Content-Type: application/json
+Authorization: Basic {{user}}:{{password}}
 
 ### @name saveVideo
 POST http://localhost:8080/videos
 Content-Type: application/json
+Authorization: Basic {{user}}:{{password}}
 
 {
   "title": "The title 1",
@@ -16,6 +21,7 @@ Content-Type: application/json
 ### @name saveVideoAgain
 POST http://localhost:8080/videos
 Content-Type: application/json
+Authorization: Basic {{user}}:{{password}}
 
 {
   "title": "The title 2",
