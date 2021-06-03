@@ -6,15 +6,51 @@ GET http://localhost:8080/videos
 Content-Type: application/json
 Authorization: Basic {{user}}:{{password}}
 
+### @name missingAuthor
+POST http://localhost:8080/videos
+Content-Type: application/json
+Authorization: Basic {{user}}:{{password}}
+
+{
+  "title": "Title 1",
+  "description": "The description 1",
+  "url": "http://localhost:8000/videos/1"
+}
+
+### @name titleIsTooShort
+POST http://localhost:8080/videos
+Content-Type: application/json
+Authorization: Basic {{user}}:{{password}}
+
+{
+  "title": "T",
+  "description": "The description 1",
+  "url": "http://localhost:8000/videos/1",
+  "author": "yangwawa0323"
+}
+
+### @name titleIsTooLong
+POST http://localhost:8080/videos
+Content-Type: application/json
+Authorization: Basic {{user}}:{{password}}
+
+{
+  "title": "The loooooong title 1",
+  "description": "The description 1",
+  "url": "http://localhost:8000/videos/1",
+  "author": "yangwawa0323"
+}
+
 ### @name saveVideo
 POST http://localhost:8080/videos
 Content-Type: application/json
 Authorization: Basic {{user}}:{{password}}
 
 {
-  "title": "The title 1",
+  "title": "Title 1",
   "description": "The description 1",
-  "url": "http://localhost:8000/videos/1"
+  "url": "http://localhost:8000/videos/1",
+  "author": "yangwawa"
 }
 
 
