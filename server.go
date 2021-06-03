@@ -1,6 +1,10 @@
 package main
 
 import (
+	"io"
+	"log"
+	"os"
+
 	"github.com/gin-gonic/gin"
 	"github.com/yangwawa0323/gin-demo/controller"
 	"github.com/yangwawa0323/gin-demo/middlewares"
@@ -12,7 +16,18 @@ var (
 	videoController controller.VideoController = controller.New(videoService)
 )
 
+func setupLogOutput() {
+	logFile, err := os.Create("gin.log")
+	if err != nil {
+		log.Fatal("Can not create log file.")
+	}
+	gin.DefaultWriter = io.MultiWriter(logFile, os.Stdout)
+}
+
 func main() {
+
+	// setup log output
+	setupLogOutput()
 
 	/**
 	* Same as gin.Default()
