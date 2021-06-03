@@ -21,6 +21,8 @@ func setupLogOutput() {
 	if err != nil {
 		log.Fatal("Can not create log file.")
 	}
+
+	// setup gin default writer
 	gin.DefaultWriter = io.MultiWriter(logFile, os.Stdout)
 }
 
