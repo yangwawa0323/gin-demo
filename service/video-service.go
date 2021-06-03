@@ -17,7 +17,16 @@ type videoService struct {
 }
 
 func New() VideoService {
-	return &videoService{}
+
+	// return &videoService{}
+
+	/*
+	* the upper line will return nil to gin.JSON
+	* and return a null object, so we changed code
+	* by initial the videos an empty slice.
+	 */
+
+	return &videoService{videos: make([]entity.Video, 0)}
 }
 
 func (service *videoService) Save(video entity.Video) entity.Video {
